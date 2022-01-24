@@ -163,14 +163,14 @@ aside {
 	}
 	section {
 		word-break: break-all;
-		font-size: 14px;
+		font-size: 12px;
 	}
 	#homesection,#aboutsection,#servicesection{
 		padding-left: 100px;
 	}
 	aside>img{
 		width: 300px;
-		height: 400px;padding-left:100px;
+		height: 400px;margin-left:100px;
 	}
 	#warpgrid{
 	width: 100%;
