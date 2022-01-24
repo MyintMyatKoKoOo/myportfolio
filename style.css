@@ -161,6 +161,17 @@ aside {
 	header{
 		margin-bottom: 40px;
 	}
+	section {
+		word-break: break-all;
+		font-size: 14px;
+	}
+	#homesection,#aboutsection,#servicesection{
+		padding-left: 100px;
+	}
+	aside>img{
+		width: 300px;
+		height: 400px;
+	}
 	#warpgrid{
 	width: 100%;
 	display: grid;
