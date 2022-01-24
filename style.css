@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+*{
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'Prata', serif;
+	--bgblack: #050000;
+	--bodercolor: cyan;
+	--white: white;
+}
+body{
+	width: 100%;
+	background: gray;
+	padding: 70px 100px;
+}
+#warpgrid{
+	width: inherit;
+	display: grid;
+	grid-template-columns:50% 50%;
+	grid-template-areas:
+	 "header header"
+	 "section aside";
+	 background: var(--bgblack);
+	 border-radius: 10px;
+	 box-shadow: 0px 6px 60px var(--bgblack);
+	 padding-bottom: 0px;
+}
+header,section,aside{
+	padding: 10px;
+}
+header{
+	grid-area: header;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom:100px;
+}
+header h3{
+	animation: roatetext 2s infinite;
+}
+@keyframes roatetext{
+	0%{ transform:rotateY(0deg) ; }
+	50%{transform: rotateY(90deg);}
+	100%{transform: rotateY(0deg);}
+}
+header h3,ul{
+	color: var(--white);
+	margin: 0px 20px;
+}
+header ul{
+	display: flex;
+	list-style: none;
+}
+header ul li {
+	margin: 0px 10px;
+	padding: 4px 5px;
+	border-bottom: 2px solid var(--white);
+	transition:ease-in  200ms;
+}
+header ul li:hover{
+	border-bottom: 2px solid var(--bodercolor);
+	cursor: pointer;
+}
+header p{
+	color: var(--white);
+}
+/*------------headerEnd------------------*/
+section{
+	grid-area: section;
+	color: var(--white);
+	transition:ease opacity 500ms;
+}
+#homesection{
+	opacity: 1;	
+	padding-left: 150px;
+	padding-top: 190px;
+	z-index: 1;
+}
+#homesection article{
+	border-left: 2px solid var(--white);
+	padding-left: 10px;
+	margin:15px 0px;
+}
+#homesection article h4{
+ 	font-size: 30px;
+ 	font-weight: lighter;
+	text-shadow: 2px 2px 5px var(--bodercolor);
+	margin-bottom: 10px;
+}
+#homesection article p{
+	font-size: 23px;
+	
+}
+#homesection button:hover{
+	cursor: pointer;
+	background: var(--bodercolor);
+	color: black;
+	border: 1px solid gray;
+}
+#homesection button,#aboutsection button,#servicesection button{
+	background: black;
+	border: 1px solid var(--bodercolor);
+	color: var(--white);
+	border-radius: 10px;
+	padding: 6px 25px;
+	margin-left: 10px;
+	margin:10px 0px;
+}
+#aboutsection,#servicesection{
+	padding-left: 150px;
+ 	opacity: 0;
+}
+#servicesection article{
+	height: 300px;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+#servicesection article ul{
+	list-style: none;
+}
+#servicesection article ul li{
+	padding: 2px 3px;
+	cursor: pointer;
+}
+#servicesection article ul li:hover{
+	color: var(--bodercolor);
+}
+/*---------------sectionEnd------------*/
+aside{
+	display: flex;
+	grid-area: aside;
+} 
+aside {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	justify-content:end;
+}
+#homeside{
+	display: flex;
+}
+#homeside #socialmedia{
+	display: flex;
+	margin-top: -80px;
+	justify-content: center;
+	flex-direction: column;
+	margin-left: 50px;
+}
+#homeside #socialmedia img{
+	margin-top: 20px;
+	cursor: pointer;
+}
+/*---------------sideEnd---------------*/
+
+@media only screen and (max-width: 600px){
+	body,header,aside,section{
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
+		background: var(--bgblack);
+	}
+	header{
+		margin-bottom: 40px;
+	}
+	#warpgrid{
+	width: 100%;
+	display: grid;
+	grid-template-columns:100%;
+	grid-template-areas:
+	 "header header"
+	 "section section"
+	 "aside aside";
+	 background: var(--bgblack);
+	 border-radius: 10px;
+	 box-shadow: 0px 6px 60px var(--bgblack);
+	 padding-bottom: 0px;
+	}
+}
