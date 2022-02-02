@@ -3,8 +3,8 @@
 	box-sizing: border-box;
 	margin: 0;
 	font-family: 'Prata', serif;
-	--bgblack: #050000;
-	--bodercolor: cyan;
+	--black: #050000;
+	--cyan: cyan;
 	--white: white;
 }
 body{
@@ -13,25 +13,29 @@ body{
 	padding: 70px 100px;
 }
 #warpgrid{
-	width: inherit;
+	width: 100%;
+	overflow: hidden;
 	display: grid;
 	grid-template-columns:50% 50%;
+	grid-gap: 30px;
 	grid-template-areas:
 	 "header header"
 	 "section aside";
-	 background: var(--bgblack);
+	 background: var(--black);
 	 border-radius: 10px;
-	 box-shadow: 0px 6px 60px var(--bgblack);
-	 padding-bottom: 0px;
+	 box-shadow: 0px 6px 60px var(--black);
+	 padding:50px 0px;
 }
 header,section,aside{
 	padding: 10px;
 }
 header{
+	/*box-shadow: 0px 0px 3px gray;*/
+	padding: 15px 0px;
 	grid-area: header;
 	display: flex;
 	justify-content: space-between;
-	padding-bottom:100px;
+	margin-bottom:100px;
 }
 header h3{
 	animation: roatetext 2s infinite;
@@ -56,7 +60,7 @@ header ul li {
 	transition:ease-in  200ms;
 }
 header ul li:hover{
-	border-bottom: 2px solid var(--bodercolor);
+	border-bottom: 2px solid var(--cyan);
 	cursor: pointer;
 }
 header p{
@@ -71,18 +75,18 @@ section{
 #homesection{
 	opacity: 1;	
 	padding-left: 150px;
-	padding-top: 190px;
+	padding-top: 100px;
 	z-index: 1;
 }
 #homesection article{
 	border-left: 2px solid var(--white);
 	padding-left: 10px;
-	margin:15px 0px;
+	margin:10px 0px;
 }
 #homesection article h4{
  	font-size: 30px;
  	font-weight: lighter;
-	text-shadow: 2px 2px 5px var(--bodercolor);
+	text-shadow: 2px 2px 5px var(--cyan);
 	margin-bottom: 10px;
 }
 #homesection article p{
@@ -91,13 +95,13 @@ section{
 }
 #homesection button:hover{
 	cursor: pointer;
-	background: var(--bodercolor);
+	background: var(--cyan);
 	color: black;
 	border: 1px solid gray;
 }
 #homesection button,#aboutsection button,#servicesection button{
 	background: black;
-	border: 1px solid var(--bodercolor);
+	border: 1px solid var(--cyan);
 	color: var(--white);
 	border-radius: 10px;
 	padding: 6px 25px;
@@ -122,12 +126,13 @@ section{
 	cursor: pointer;
 }
 #servicesection article ul li:hover{
-	color: var(--bodercolor);
+	color: var(--cyan);
 }
 /*---------------sectionEnd------------*/
 aside{
 	display: flex;
 	grid-area: aside;
+	align-items: center;
 } 
 aside {
 	padding-bottom: 0px;
@@ -135,6 +140,33 @@ aside {
 	margin-top: 0px;
 	justify-content:end;
 }
+aside>img{
+	margin-top: -20px;
+	margin-bottom: 20px;
+	margin-right: 100px;
+	border-top-left-radius: 25%;
+	border-bottom-right-radius:25% ;
+	animation:bdlight 4s infinite ;
+	border: 2px solid black;
+	/*border-left-color: cyan;
+	border-right-color: cyan;
+*/	box-shadow: 2px 1px 20px gray;
+
+}
+aside>img:hover{
+	border-bottom-color: var(--cyan);
+	border-top-color: var(--cyan);
+	border-left-color:var(--black);
+	border-right-color: var(--black);
+}
+/*@keyframes bdlight{
+ 0%{border-top-color: cyan;}
+ 20%{border-right-color: cyan;}
+ 40%{border-bottom-color: cyan;}
+ 60%{border-left-color: cyan;}
+ 80%{border-top-color: black;}
+ 100%{border-top-color: cyan;}
+}*/
 #homeside{
 	display: flex;
 }
@@ -147,16 +179,22 @@ aside {
 }
 #homeside #socialmedia img{
 	margin-top: 20px;
+	padding: 0px 10px;
+	margin-right: 50px;
+	border-left: 2px solid gray;
 	cursor: pointer;
+}
+#homeside #socialmedia img:hover{
+	border-color: cyan;
 }
 /*---------------sideEnd---------------*/
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 900px){
 	body,header,aside,section{
 		padding: 0px;
 		margin: 0px;
 		width: 100%;
-		background: var(--bgblack);
+		background: var(--black);
 	}
 	header{
 		margin-bottom: 40px;
@@ -180,9 +218,15 @@ aside {
 	 "header header"
 	 "section section"
 	 "aside aside";
-	 background: var(--bgblack);
+	 background: var(--black);
 	 border-radius: 10px;
-	 box-shadow: 0px 6px 60px var(--bgblack);
+	 box-shadow: 0px 6px 60px var(--black);
 	 padding-bottom: 0px;
+	}
+}
+@media only screen and (min-width: 321px) and (max-width: 900px){
+	aside>img{
+		width: 300px;
+		height: 400px;
 	}
 }
