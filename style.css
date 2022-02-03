@@ -9,29 +9,31 @@
 }
 body{
 	width: 100%;
-	background: gray;
 	padding: 70px 100px;
+	background: whitesmoke;
+	/*background: gray;*/
 }
 #warpgrid{
 	width: 100%;
 	overflow: hidden;
 	display: grid;
-	grid-template-columns:50% 50%;
+	grid-template-columns:1fr 1fr;
 	grid-gap: 30px;
 	grid-template-areas:
 	 "header header"
 	 "section aside";
-	 background: var(--black);
+	 /*background: var(--black);*/
+	 background-image: url("images/bgcv3.jpg");
+	 background-size: cover;
 	 border-radius: 10px;
 	 box-shadow: 0px 6px 60px var(--black);
-	 padding:50px 0px;
+	 padding:55px 0px;
 }
 header,section,aside{
 	padding: 10px;
 }
 header{
-	/*box-shadow: 0px 0px 3px gray;*/
-	padding: 15px 0px;
+	padding: 10px 0px;
 	grid-area: header;
 	display: flex;
 	justify-content: space-between;
@@ -70,7 +72,6 @@ header p{
 section{
 	grid-area: section;
 	color: var(--white);
-	transition:ease opacity 500ms;
 }
 #homesection{
 	opacity: 1;	
@@ -86,7 +87,7 @@ section{
 #homesection article h4{
  	font-size: 30px;
  	font-weight: lighter;
-	text-shadow: 2px 2px 5px var(--cyan);
+	text-shadow: 2px 2px 5px gray;
 	margin-bottom: 10px;
 }
 #homesection article p{
@@ -95,15 +96,16 @@ section{
 }
 #homesection button:hover{
 	cursor: pointer;
-	background: var(--cyan);
-	color: black;
-	border: 1px solid gray;
+	background: var(--black);
+	color: white;
+	border: 1px solid var(--cyan);
+	border-radius: 0px;
 }
 #homesection button,#aboutsection button,#servicesection button{
 	background: black;
-	border: 1px solid var(--cyan);
+	border: 1px solid var(--white);
 	color: var(--white);
-	border-radius: 10px;
+	border-radius: 0px;
 	padding: 6px 25px;
 	margin-left: 10px;
 	margin:10px 0px;
@@ -133,14 +135,12 @@ aside{
 	display: flex;
 	grid-area: aside;
 	align-items: center;
+	justify-content: end;
 } 
-aside {
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	justify-content:end;
+#homeside-pp{
+	perspective: 1000px;
 }
-aside>img{
+aside>#homeside-pp>img{
 	margin-top: -20px;
 	margin-bottom: 20px;
 	margin-right: 100px;
@@ -148,25 +148,20 @@ aside>img{
 	border-bottom-right-radius:25% ;
 	animation:bdlight 4s infinite ;
 	border: 2px solid black;
-	/*border-left-color: cyan;
-	border-right-color: cyan;
-*/	box-shadow: 2px 1px 20px gray;
+	box-shadow: 2px 1px 10px gray;
+	padding: 40px;
+	transition: transform 1000ms ease;
 
 }
-aside>img:hover{
+aside>#homeside-pp>img:hover{
+	transform: rotateY(30deg);
 	border-bottom-color: var(--cyan);
 	border-top-color: var(--cyan);
 	border-left-color:var(--black);
 	border-right-color: var(--black);
+	cursor: pointer;
+	
 }
-/*@keyframes bdlight{
- 0%{border-top-color: cyan;}
- 20%{border-right-color: cyan;}
- 40%{border-bottom-color: cyan;}
- 60%{border-left-color: cyan;}
- 80%{border-top-color: black;}
- 100%{border-top-color: cyan;}
-}*/
 #homeside{
 	display: flex;
 }
@@ -188,16 +183,10 @@ aside>img:hover{
 	border-color: cyan;
 }
 /*---------------sideEnd---------------*/
-
-<<<<<<< HEAD
-@media only screen and (max-width: 900px){
-=======
 @media only screen and (max-width: 992px){
->>>>>>> 976152bded49e0018aff00cb60dc535339f2a03e
 	body,header,aside,section{
 		padding: 0px;
 		margin: 0px;
-		width: 100%;
 		background: var(--black);
 	}
 	header{
@@ -206,34 +195,49 @@ aside>img:hover{
 	section {
 		word-break: break-all;
 		font-size: 12px;
+
 	}
 	#homesection,#aboutsection,#servicesection{
-		padding-left: 100px;
+		padding-left: 100px !important;
+	}
+	aside{
+		margin-left: -80px !important;
+		display: flex;
+		justify-content: start !important;
+		flex-direction: column;
 	}
 	aside>img{
-		width: 300px;
-		height: 400px;
+		width: 200px;
+		height: 200px;
+		margin: 0px 0px 20px 0px !important;
+		border: 0px solid;
+		border-radius: 0px;
+		box-shadow: 0px 0px 0px black;
+	}
+	 #socialmedia{
+	 	width: 50%;
+	 	margin: 0px !important;
+	 	padding: 10px 0px;
+	 	display: flex;
+	 	flex-direction: row !important;
+	 	justify-content: space-around !important;
+	}
+	#socialmedia img{
+		margin: 0px 0px 0px 20px !important;
+		padding: 0px 10px !important;
+		width: 17%;
 	}
 	#warpgrid{
 	width: 100%;
 	display: grid;
-	grid-template-columns:100%;
+	grid-template-columns:1fr;
 	grid-template-areas:
-	 "header header"
-	 "section section"
-	 "aside aside";
+	 "header"
+	 "section"
+	 "aside";
 	 background: var(--black);
 	 border-radius: 10px;
 	 box-shadow: 0px 6px 60px var(--black);
 	 padding-bottom: 0px;
 	}
 }
-<<<<<<< HEAD
-@media only screen and (min-width: 321px) and (max-width: 900px){
-	aside>img{
-		width: 300px;
-		height: 400px;
-	}
-}
-=======
->>>>>>> 976152bded49e0018aff00cb60dc535339f2a03e
