@@ -1,8 +1,8 @@
 {
-  "projectName": "My Portfolio",
+  "projectName": "mysite",
   "meta": {
     "type": "frontend"
   },
   "packageManager": "npm",
-  "hash": "ec2da5fa"
+  "hash": "980da421"
 }
