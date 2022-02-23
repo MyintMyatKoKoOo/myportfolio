@@ -101,7 +101,7 @@ section{
 	border: 1px solid var(--cyan);
 	border-radius: 0px;
 }
-#homesection button,#aboutsection button,#servicesection button{
+#homesection button{
 	background: black;
 	border: 1px solid var(--white);
 	color: var(--white);
@@ -109,6 +109,13 @@ section{
 	padding: 6px 25px;
 	margin-left: 10px;
 	margin:10px 0px;
+}
+#homesection  button>a{
+	text-decoration: none;
+	color: var(--white);
+}
+#aboutsection ul li{
+	padding: 10px 5px;
 }
 #aboutsection,#servicesection{
 	padding-left: 150px;
@@ -127,8 +134,12 @@ section{
 	padding: 2px 3px;
 	cursor: pointer;
 }
-#servicesection article ul li:hover{
-	color: var(--cyan);
+#servicesection article ul li a{
+	text-decoration: none;
+	color: var(--white);
+}
+#servicesection article ul li a:hover{
+	color:var(--cyan);
 }
 /*---------------sectionEnd------------*/
 aside{
