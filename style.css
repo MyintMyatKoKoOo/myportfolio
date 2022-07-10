@@ -152,6 +152,8 @@ aside{
 	perspective: 1000px;
 }
 aside>#homeside-pp>img{
+	width: 300px;
+	height: 350px;
 	margin-top: -20px;
 	margin-bottom: 20px;
 	margin-right: 100px;
@@ -210,20 +212,26 @@ aside>#homeside-pp>img:hover{
 	}
 	#homesection,#aboutsection,#servicesection{
 		padding-left: 100px !important;
+		margin-left: -60px;
 	}
 	aside{
-		margin-left: -80px !important;
+		margin-left: -60px !important;
 		display: flex;
 		justify-content: start !important;
 		flex-direction: column;
 	}
-	aside>img{
-		width: 200px;
-		height: 200px;
+	aside>#homeside-pp>img{
+		width: 300px;
+		height: 300px;
 		margin: 0px 0px 20px 0px !important;
 		border: 0px solid;
 		border-radius: 0px;
 		box-shadow: 0px 0px 0px black;
+	}
+	aside>#homeside-pp{
+		border: 1px solid #ececec;
+		box-shadow: inset 2px -2px 10px cyan;
+		margin-bottom: 50px;
 	}
 	 #socialmedia{
 	 	width: 50%;
@@ -236,7 +244,7 @@ aside>#homeside-pp>img:hover{
 	#socialmedia img{
 		margin: 0px 0px 0px 20px !important;
 		padding: 0px 10px !important;
-		width: 17%;
+
 	}
 	#warpgrid{
 	width: 100%;
